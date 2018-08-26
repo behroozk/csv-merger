@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceRoot}/dist/index.js",
+            "console": "integratedTerminal",
+            "outFiles": [
+                "${workspaceRoot}/dist/**/*.js"
+            ],
+            "preLaunchTask": "build",
+            "args": [
+                "-o feed.csv",
+                "feed1.csv feed2.csv feed3.csv feed4.csv"
+            ],
+            "envFile": "${workspaceRoot}/.env"
+        },
+    ]
+}
