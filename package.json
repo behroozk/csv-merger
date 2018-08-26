@@ -1,0 +1,38 @@
+{
+  "name": "csv-merger",
+  "version": "0.1.2",
+  "description": "Merge multiple CSV files into one",
+  "main": "dist/index.js",
+  "bin": {
+    "csv-merger": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist/",
+    "clean-build": "npm run clean ; npm run build",
+    "prepare": "npm run clean-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/behroozk/csv-merger.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/behroozk/csv-merger/issues"
+  },
+  "homepage": "https://github.com/behroozk/csv-merger#readme",
+  "devDependencies": {
+    "@types/csv-parse": "^1.1.11",
+    "@types/csv-stringify": "^1.4.2",
+    "@types/node": "^10.9.2",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "commander": "^2.17.1",
+    "csv-parse": "^2.5.0",
+    "csv-stringify": "^3.1.1"
+  }
+}
