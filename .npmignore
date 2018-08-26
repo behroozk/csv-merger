@@ -1,0 +1,11 @@
+src/
+.vscode/
+index.ts
+test/
+dist/test/
+
+tsconfig.json
+tsconfig_npm.json
+tslint.json
+
+.env
