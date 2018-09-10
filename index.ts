@@ -6,7 +6,7 @@ import { getUniqueColumns } from './src/csv/unique_columns';
 import { writeWithColumns } from './src/csv/write_with_columns';
 import { IMergeOptions } from './src/types/merge_options.interface';
 
-async function merge(
+export async function merge(
     inputFiles: string[],
     partialOptions: Partial<IMergeOptions> = {},
 ): Promise<string | boolean> {
@@ -67,3 +67,5 @@ async function main(): Promise<void> {
 }
 
 main();
+
+export { IMergeOptions };
