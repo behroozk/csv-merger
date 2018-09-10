@@ -1,6 +1,6 @@
 {
   "name": "csv-merger",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Merge multiple CSV files into one",
   "main": "dist/index.js",
   "bin": {
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rm -rf dist/",
-    "clean-build": "npm run clean ; npm run build",
+    "clean-build": "npm run clean ; npm run build && chmod +x dist/index.js",
     "prepare": "npm run clean-build"
   },
   "repository": {
@@ -26,13 +26,13 @@
   "devDependencies": {
     "@types/csv-parse": "^1.1.11",
     "@types/csv-stringify": "^1.4.2",
-    "@types/node": "^10.9.2",
+    "@types/node": "^10.9.4",
     "tslint": "^5.11.0",
-    "typescript": "^3.0.1"
+    "typescript": "^3.0.3"
   },
   "dependencies": {
-    "commander": "^2.17.1",
-    "csv-parse": "^2.5.0",
-    "csv-stringify": "^3.1.1"
+    "commander": "^2.18.0",
+    "csv-parse": "^3.0.0",
+    "csv-stringify": "^4.0.1"
   }
 }
