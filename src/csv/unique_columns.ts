@@ -1,7 +1,5 @@
 import csvParse from 'csv-parse';
-import { promisify } from 'util';
 
-const csvParseAsync = promisify<string, string[][]>(csvParse);
 import { firstLine } from '../lib/first_line';
 
 export async function getUniqueColumns(inputFiles: string[]): Promise<string[]> {
@@ -9,7 +7,7 @@ export async function getUniqueColumns(inputFiles: string[]): Promise<string[]> 
 
     for (const inputFile of inputFiles) {
         const headerString: string = await firstLine(inputFile);
-        const header = (await csvParseAsync(headerString))[0];
+        const header = await getColumnHeaders(headerString);
 
         header.forEach((column) => {
             uniqueColumnsSet.add(column);
@@ -19,4 +17,20 @@ export async function getUniqueColumns(inputFiles: string[]): Promise<string[]> 
     const uniqueColumns: string[] = Array.from(uniqueColumnsSet);
 
     return uniqueColumns;
+}
+
+function getColumnHeaders(headerString: string): Promise<string[]> {
+    return new Promise((resolve, reject) => {
+        csvParse(headerString, (error, result) => {
+            if (error) {
+                return reject(error);
+            }
+
+            if (!Array.isArray(result) || result.length < 1) {
+                return reject('invalid csv header');
+            }
+
+            resolve(result[0]);
+        });
+    });
 }

@@ -15,8 +15,11 @@
             ],
             "preLaunchTask": "build",
             "args": [
-                "-o feed.csv",
-                "feed1.csv feed2.csv feed3.csv feed4.csv"
+                "i1.csv",
+                "i2.csv",
+                "i3.csv",
+                "-o",
+                "o.csv",
             ],
             "envFile": "${workspaceRoot}/.env"
         },
