@@ -52,6 +52,7 @@ csvMerger.merge(inputFiles, options);
 options = {
     outputPath, // string: path to the output CSV file
     writeOutput, // boolean: if true, the output will be written to a file, otherwise will be returned by the function
+    quoted, // boolean: if true will wrap all values in quotes, otherwise values will be unquoted
 }
 ```
 
