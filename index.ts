@@ -36,6 +36,7 @@ function formOptions(partialOptions: Partial<IMergeOptions>): IMergeOptions {
             commandLineExecution: false,
             outputPath: 'merged.csv',
             writeOutput: false,
+            quoted: false,
         },
         ...partialOptions,
     };

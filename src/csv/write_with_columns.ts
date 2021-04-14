@@ -16,7 +16,7 @@ export function writeWithColumns(
         const readStream = fs.createReadStream(inputFile);
 
         const csvParesr = csvParse({ columns: true });
-        const csvStringifier = csvStringify({ header: isFirstOutput, columns: uniqueColumns });
+        const csvStringifier = csvStringify({ header: isFirstOutput, columns: uniqueColumns, quoted: options.quoted });
 
         const outputStream = readStream
             .pipe(csvParesr)
